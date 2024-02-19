@@ -25,6 +25,8 @@ namespace VinylRecordsApplication_Тепляков
             InitializeComponent();
         }
 
+        public void OpenPages(Page pages) => frame.Navigate(pages);
+
         private void OpenRecordList(object sender, RoutedEventArgs e)
         {
 

@@ -20,9 +20,12 @@ namespace VinylRecordsApplication_Тепляков.Pages.Supply
     /// </summary>
     public partial class Main : Page
     {
+        IEnumerable<Classes.Supply> AllSupplies = Classes.Supply.AllSupplies();
         public Main()
         {
             InitializeComponent();
+            foreach (var supply in AllSupplies)
+                supplyParent.Children.Add(new Pages.Supply.Elements.Supply(supply, this));
         }
     }
 }

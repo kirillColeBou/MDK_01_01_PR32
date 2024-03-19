@@ -38,9 +38,7 @@
             </ComboBox>
         </Grid>
         <ScrollViewer Margin="10,65,10,10">
-            <StackPanel x:Name="recordsParent" Margin="10">
-
-            </StackPanel>
+            <StackPanel x:Name="recordsParent" Margin="10"/>
         </ScrollViewer>
     </Grid>
 </Page>

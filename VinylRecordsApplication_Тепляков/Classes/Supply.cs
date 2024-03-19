@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace VinylRecordsApplication_Тепляков.Classes
 {
-    public class Supple
+    public class Supply
     {
         public int Id { get; set; }
         public int IdManufacturer { get; set; }

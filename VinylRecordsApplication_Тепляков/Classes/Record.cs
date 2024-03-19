@@ -1,6 +1,8 @@
-﻿using System;
+﻿using OfficeOpenXml;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -87,5 +89,39 @@ namespace VinylRecordsApplication_Тепляков.Classes
                     $"WHERE [Id] = {this.Id}");
         }
         public void Delete() => Classes.DBConnection.Connection($"DELETE FROM [dbo].[Record] WHERE [Id] = {this.Id};");
+
+        public static void Export(string filePath, IEnumerable<Record> records)
+        {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            using (ExcelPackage package = new ExcelPackage())
+            {
+                ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Записи");
+                worksheet.Cells[1, 1].Value = "Id";
+                worksheet.Cells[1, 2].Value = "Название";
+                worksheet.Cells[1, 3].Value = "Год";
+                worksheet.Cells[1, 4].Value = "Формат";
+                worksheet.Cells[1, 5].Value = "Размер";
+                worksheet.Cells[1, 6].Value = "Id производителя";
+                worksheet.Cells[1, 7].Value = "Цена";
+                worksheet.Cells[1, 8].Value = "Id состояния";
+                worksheet.Cells[1, 9].Value = "Описание";
+                int row = 2;
+                foreach (var record in records)
+                {
+                    worksheet.Cells[row, 1].Value = record.Id;
+                    worksheet.Cells[row, 2].Value = record.Name;
+                    worksheet.Cells[row, 3].Value = record.Year;
+                    worksheet.Cells[row, 4].Value = record.Format;
+                    worksheet.Cells[row, 5].Value = record.Size;
+                    worksheet.Cells[row, 6].Value = record.IdManufacturer;
+                    worksheet.Cells[row, 7].Value = record.Price;
+                    worksheet.Cells[row, 8].Value = record.IdState;
+                    worksheet.Cells[row, 9].Value = record.Description;
+                    row++;
+                }
+                FileInfo fileInfo = new FileInfo(filePath);
+                package.SaveAs(fileInfo);
+            }
+        }
     }
 }

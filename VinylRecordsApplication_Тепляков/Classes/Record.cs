@@ -50,19 +50,19 @@ namespace VinylRecordsApplication_Тепляков.Classes
                     "INSERT INTO " +
                     "[dbo].[Record](" +
                     "[Name], " +
-                    "[Year]" +
-                    "[Format]" +
-                    "[Size]" +
+                    "[Year], " +
+                    "[Format], " +
+                    "[Size], " +
                     "[IdManufacturer], " +
-                    "[Price]" +
-                    "[IdState]" +
+                    "[Price], " +
+                    "[IdState], " +
                     "[Description]) " +
                     "VALUES(" +
                     $"N'{this.Name}', " +
-                    $"{this.Year}', " +
+                    $"{this.Year}, " +
                     $"{this.Format}, " +
-                    $"{this.Size}," +
-                    $"{this.IdManufacturer}," +
+                    $"{this.Size}, " +
+                    $"{this.IdManufacturer}, " +
                     $"{CorrectPrice}, " +
                     $"{this.IdState}, " +
                     $"N'{this.Description}');");

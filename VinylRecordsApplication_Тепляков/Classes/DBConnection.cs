@@ -8,7 +8,7 @@ namespace VinylRecordsApplication_Тепляков.Classes
         public static DataTable Connection(string SQL)
         {
             DataTable dataTable = new DataTable("Datatable");
-            SqlConnection sqlConnection = new SqlConnection("Server=student.permaviat.ru;Trusted_Connection=No;DataBase=pr32;user=sa;pwd=Asdfg123");
+            SqlConnection sqlConnection = new SqlConnection("Server=USER\\SQLEXPRESS;Trusted_Connection=No;DataBase=VinylRecords;user=sa;pwd=Asdfg123");
             sqlConnection.Open();
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
             sqlCommand.CommandText = SQL;

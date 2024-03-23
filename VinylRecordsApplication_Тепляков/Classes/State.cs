@@ -31,7 +31,7 @@ namespace VinylRecordsApplication_Тепляков.Classes
         {
             if(Update == false)
             {
-                DBConnection.Connection($"Insert Into [dbo].[State] ([Name], [Subname], [Description]) Values (N'{this.Name}', N'{this.Subname}', N'{this.Description}';");
+                DBConnection.Connection($"Insert Into [dbo].[State] ([Name], [Subname], [Description]) Values (N'{this.Name}', N'{this.Subname}', N'{this.Description}');");
                 this.Id = AllState().Where(x => x.Name == this.Name && x.Subname == this.Subname && x.Description == this.Description).First().Id;
             }
             else DBConnection.Connection($"Update [dbo].[State] Set [Name] = N'{this.Name}', [Subname] = N'{this.Subname}', [Description] = N'{this.Description}' Where [Id] = {this.Id};");

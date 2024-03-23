@@ -1,0 +1,23 @@
+﻿<Page x:Class="VinylRecordsApplication_Тепляков.Pages.ChangeSettings"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VinylRecordsApplication_Тепляков.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ChangeSettings">
+
+    <Grid Background="#FFE6E6E6">
+        <Label Content="Изменение парметров подключения" HorizontalAlignment="Center" Margin="10" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" FontFamily="Arial"/>
+        <Label Content="Введите сервер для подключения: " HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontFamily="Arial" Margin="30,50,0,0"/>
+        <TextBox x:Name="newServer"  VerticalAlignment="Top" Height="30" Margin="30,90,30,0"/>
+        <Label Content="Введите название к подключаемой базе данных: " HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontFamily="Arial" Margin="30,130,0,0"/>
+        <TextBox x:Name="newNameDB" VerticalAlignment="Top" Height="30" Margin="30,170,30,0"/>
+        <Label Content="Введите логин и пароль пользователя для подключения к серверу: " HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontFamily="Arial" Margin="30,210,0,0"/>
+        <Label Content="Логин: " HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14" FontFamily="Arial" Margin="40,250,0,0" FontStyle="Italic"/>
+        <TextBox x:Name="newLogin" VerticalAlignment="Top" Height="30" Margin="40,280,30,0"/>
+        <Label Content="Пароль: " HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14" FontFamily="Arial" Margin="40,310,0,0" FontStyle="Italic"/>
+        <PasswordBox x:Name="newPassword" PasswordChar="*" VerticalAlignment="Top" Height="30" Margin="40,340,30,0"/>
+    </Grid>
+</Page>

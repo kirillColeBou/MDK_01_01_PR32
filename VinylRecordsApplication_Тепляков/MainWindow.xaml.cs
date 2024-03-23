@@ -27,7 +27,8 @@ namespace VinylRecordsApplication_Тепляков
         {
             InitializeComponent();
             MainWindow.mainWindow = this;
-            OpenPage(mainRecords);
+            OpenPage(new Pages.ChangeSettings());
+            Menu.Visibility = Visibility.Hidden;
         }
         public void OpenPage(Page pages)
         {

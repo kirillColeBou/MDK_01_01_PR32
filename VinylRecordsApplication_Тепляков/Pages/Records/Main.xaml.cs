@@ -28,11 +28,14 @@ namespace VinylRecordsApplication_Тепляков.Pages.Records
         public Main()
         {
             InitializeComponent();
-            searchRecords = AllRecords.ToList();
-            CreateUI = true;
-            LoadAllRecord(AllRecords.ToList());
-            LoadAllManufacture();
-            LoadAllState();
+            if (Pages.ChangeSettings.ConnectIsApply == true)
+            {
+                searchRecords = AllRecords.ToList();
+                CreateUI = true;
+                LoadAllRecord(AllRecords.ToList());
+                LoadAllManufacture();
+                LoadAllState();
+            }
         }
         public void LoadRecord()
         {
